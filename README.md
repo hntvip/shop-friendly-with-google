@@ -9,9 +9,8 @@
 
 # Run client side:
 
- $ cd client
+ $ cd client <br/>
  $ npm run serve
-<<<<<<< HEAD
 
 # Deloy to github Page
 1. create local branch: git branch gh-page
@@ -20,10 +19,11 @@
   // vue.config.js
 
 <code> 
-    module.exports = {
-        publicPath: 'shop-friendly-with-google'
-    } 
+  module.exports = {
+      publicPath: 'shop-friendly-with-google'
+  } 
 </code>
+
 4. Find and open the file .gitignore located in root directory of your project.Next, find and comment the line which has the text ‘/dist’.
 5. Run npm run build, and wait for it to finish
 6. Run the command: git add dist && git commit -m "Initial dist subtree commit"
@@ -31,6 +31,5 @@
 
 8. Navigate to github on your browser and open your repository. Next click ‘Settings’ and find: GiHub Pages
 
-See more at this link ( I've just coppied this) https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
-=======
->>>>>>> cadf3e457bf4fc0aed1d7c02dce1f128b6aab6ed
+# See more at this link ( I've just coppied this) 
+https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
