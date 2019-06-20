@@ -1,9 +1,9 @@
 
-#Requied:
+# Requied:
 - Node version: > 6
 - Vue CLI version : 3
 
-# Some of error when use install VUE CLI:
+# Some of errors when use install VUE CLI:
 - if you are using vue-cli please uninstall it before installing vue-cli 3
 - Turn off Anti-virus software before , because it maybe rise some issues to prevent install VUE CLI
 
@@ -11,6 +11,7 @@
 
  $ cd client
  $ npm run serve
+<<<<<<< HEAD
 
 # Deloy to github Page
 1. create local branch: git branch gh-page
@@ -31,3 +32,5 @@
 8. Navigate to github on your browser and open your repository. Next click ‘Settings’ and find: GiHub Pages
 
 See more at this link ( I've just coppied this) https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
+=======
+>>>>>>> cadf3e457bf4fc0aed1d7c02dce1f128b6aab6ed
