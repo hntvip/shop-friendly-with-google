@@ -27,9 +27,11 @@
 4. Find and open the file .gitignore located in root directory of your project.Next, find and comment the line which has the text ‘/dist’.
 5. Run npm run build, and wait for it to finish
 6. Run the command: git add dist && git commit -m "Initial dist subtree commit"
-7. Run the command: git subtree push --prefix dist origin gh-pages
+7. Run the command: git subtree push --prefix client/dist origin gh-pages
 
 8. Navigate to github on your browser and open your repository. Next click ‘Settings’ and find: GiHub Pages
+
+*Node*: Re-deloy: re-do step 6 and 7
 
 # See more at this link ( I've just coppied this) 
 https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd
