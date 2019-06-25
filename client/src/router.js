@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import ProductListPage from './views/ProductListPage.vue'
 import ProductPage from './views/ProductPage.vue'
 Vue.use(Router)
 
@@ -13,6 +14,11 @@ export default new Router({
     },
     {
       path: '/product-page',
+      name: 'product-list-page',
+      component: ProductListPage
+    },
+    {
+      path: 'product/:id', // id of product
       name: 'product-page',
       component: ProductPage
     },

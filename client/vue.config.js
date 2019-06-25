@@ -1,3 +1,5 @@
 module.exports = {
-    publicPath: 'shop-friendly-with-google'
+    publicPath: process.env.NODE_ENV === 'production'
+    ? ''
+    : ''
 } 

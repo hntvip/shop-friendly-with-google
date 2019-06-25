@@ -2,40 +2,18 @@
   <div id="app">
     <el-container style="border: 1px solid #eee">
       <el-aside style="background-color: rgb(238, 241, 246)" :class="{ active: isCollapse == true }">
-        <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+        <el-menu router="router" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-menu-item index="1" @click="collapseMenu">
             <i class="el-icon-setting"></i>
             <span slot="title">Collapse</span>
           </el-menu-item>
-          <el-submenu index="2">
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span slot="title">Navigator One</span>
-            </template>
-            <el-menu-item-group>
-              <span slot="title">Group One</span>
-              <el-menu-item index="1-1">item one</el-menu-item>
-              <el-menu-item index="1-2">item two</el-menu-item>
-            </el-menu-item-group>
-            <el-menu-item-group title="Group Two">
-              <el-menu-item index="1-3">item three</el-menu-item>
-            </el-menu-item-group>
-            <el-submenu index="1-4">
-              <span slot="title">item four</span>
-              <el-menu-item index="1-4-1">item one</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-menu-item index="3">
+          <el-menu-item index="2" route="/product-list-page" >
             <i class="el-icon-menu"></i>
-            <span slot="title">Navigator Two</span>
+            <span slot="title">Product List Page</span>
           </el-menu-item>
-          <el-menu-item index="4" disabled>
-            <i class="el-icon-document"></i>
-            <span slot="title">Navigator Three</span>
-          </el-menu-item>
-          <el-menu-item index="5">
-            <i class="el-icon-setting"></i>
-            <span slot="title">Navigator Four</span>
+          <el-menu-item index="3" route="/product-page/1" >
+            <i class="el-icon-menu"></i>
+            <span slot="title">Product Page width Id =1</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -67,7 +45,10 @@
   // min-height: 400px;
 }
 .el-aside.active {
-  width: 64px !important ;
+  width: 65px !important ;
+}
+.el-menu {
+  border-right: none !important;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -83,13 +64,12 @@
   export default {
     data() {
       return {
-        isCollapse: true
+        isCollapse: true,
+        router: true
       };
     },
     computed: {
-      // collapseMenu() {
-      //   return !this.isCollapse;
-      // }
+      
     },
     methods: {
       handleOpen(key, keyPath) {
