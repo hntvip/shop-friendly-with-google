@@ -6,7 +6,7 @@
         <div style="padding: 14px;">
           <span>Yummy hamburger1</span>
           <div class="bottom clearfix">
-            <time class="time">{{ currentDate }}</time>
+            <time class="time"></time>
             <el-button type="text" class="button">Operating</el-button>
           </div>
         </div>

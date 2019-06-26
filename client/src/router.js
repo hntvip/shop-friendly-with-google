@@ -1,28 +1,44 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Layout from './layout/index.vue' 
 import ProductListPage from './views/ProductListPage.vue'
 import ProductPage from './views/ProductPage.vue'
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    // {
+    //   path: '/',
+    //   name: 'home',
+    //   component: Home
+    // },
     {
       path: '/',
-      name: 'home',
-      component: Home
+      component: Layout,
+      redirect: '/dashboard',
+      children: [
+        {
+          path: 'dashboard',
+          component: () => import('@/views/dashboard/index'),
+          name: 'Dashboard'
+        }
+      ]
     },
     {
-      path: '/product-page',
+      component: Layout,
+      path: '/product-list-page',
       name: 'product-list-page',
       component: ProductListPage
     },
     {
-      path: 'product/:id', // id of product
+      component: Layout,
+      path: '/product-page',
       name: 'product-page',
       component: ProductPage
     },
     {
+      component: Layout,
       path: '/about',
       name: 'about',
       // route level code-splitting
