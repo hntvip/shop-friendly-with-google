@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 import Layout from './layout/index.vue' 
 import ProductListPage from './views/ProductListPage.vue'
 import ProductPage from './views/ProductPage.vue'
@@ -8,11 +7,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: Home
-    // },
     {
       path: '/',
       component: Layout,

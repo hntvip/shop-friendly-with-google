@@ -1,21 +1,79 @@
 <template>
   <div class="menu-wrapper">
     <el-aside style="background-color: rgb(238, 241, 246)" :class="{ active: isCollapse == true }">
-        <el-menu router="router" default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+        <el-menu default-active="1" router="router"class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
           <el-menu-item @click="collapseMenu">
             <i v-bind:class="[isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left']"></i>
           </el-menu-item>
-           <el-menu-item index="2" route="/" >
+          <el-submenu index="1" >
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">Giày nữ</span>
+            </template>
+            <el-menu-item-group title="Giày cao gót">
+              <el-menu-item index="1-1">Giày cao gót 7cm</el-menu-item>
+              <el-menu-item index="1-2">Giày cao gót 10cm</el-menu-item>
+              <el-menu-item index="1-3">Giày cao gót 12cm</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="Giày sandal nữ">
+              <el-menu-item index="1-4">Giày sandal nữ 5cm</el-menu-item>
+              <el-menu-item index="1-5">Giày sandal nữ 7cm</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="Giày đế xuồng">
+              <el-menu-item index="1-6">Giày đế xuồng nữ 10cm</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">Áo sơ mi công sở</span>
+            </template>
+            <el-menu-item-group title="Áo sơ mi trơn">
+              <el-menu-item index="2-1">Áo sơ mi trơn tay dài</el-menu-item>
+              <el-menu-item index="2-2">Áo sơ mi trơn tay cọc</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="Áo sơ mi kiểu">
+              <el-menu-item index="2-4">Áo sơ mi kiểu tay dài</el-menu-item>
+              <el-menu-item index="2-5">Áo sơ mi kiểu tay cọc</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">Bóp / Ví nam nữ cao cấp</span>
+            </template>
+            <el-menu-item-group title="Bóp Nam">
+              <el-menu-item index="3-1">Bóp Nam da bò cao cấp</el-menu-item>
+              <el-menu-item index="3-2">Bóp Nam da PU cao cấp</el-menu-item>
+            </el-menu-item-group>
+            <el-menu-item-group title="Bóp Ví Nữ">
+              <el-menu-item index="3-3">Bóp ví Nữ dự tiệc</el-menu-item>
+              <el-menu-item index="2-4">Áo sơ mi kiểu tay cọc</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span slot="title">Mỹ phẩm</span>
+            </template>
+            <el-menu-item-group title="FOB">
+              <el-menu-item index="3-1">Kem trắng da toàn thân FOB</el-menu-item>
+              <el-menu-item index="3-2">Sữa rửa mặt FOB</el-menu-item>
+              <el-menu-item index="3-3">Gel tẩy tế bào chết FOB</el-menu-item>
+              <el-menu-item index="3-4">Kem trị mụn FOB 10 lotion</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+          <el-menu-item index="4" route="/" >
             <i class="el-icon-s-home"></i>
             <span slot="title">HOME</span>
           </el-menu-item>
-          <el-menu-item index="3" route="/product-list-page">
+          <el-menu-item index="5" route="/product-list-page">
             <i class="el-icon-potato-strips"></i>
             <span slot="title">Product List Page</span>
           </el-menu-item>
-          <el-menu-item index="4" route="/product-page" >
+          <el-menu-item index="6" route="/product-page" >
             <i class="el-icon-s-grid"></i>
-            <span slot="title">Product Page width Id =1</span>
+            <span slot="title">Product Page width Id = 1</span>
           </el-menu-item>
         </el-menu>
       </el-aside>
@@ -53,12 +111,10 @@ export default {
 </script>
 
 <style lang="less">
-// .el-menu-vertical-demo:not(.el-menu--collapse) {
-//   // width: 200px;
-//   // min-height: 400px;
-// }
-.el-menu-item {
-  text-align: left;
+.el-menu-vertical-demo {
+  &.el-menu {
+    text-align: left;
+  }
 }
 .el-aside.active {
   width: 65px !important ;
