@@ -29,22 +29,37 @@ export default new Router({
       component: Layout,
       path: '/product-list-page',
       name: 'product-list-page',
-      component: ProductListPage
+      children: [
+        {
+          path: 'index',
+          component: ProductListPage
+        }
+      ]
     },
     {
       component: Layout,
       path: '/product-page',
       name: 'product-page',
-      component: ProductPage
+      children: [
+        {
+          path: 'index',
+          component: ProductPage
+        }
+      ]
     },
     {
       component: Layout,
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      children: [
+        {
+          path: 'index', 
+          // route level code-splitting
+          // this generates a separate chunk (about.[hash].js) for this route
+          // which is lazy-loaded when the route is visited.
+          component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+        }
+      ]
     }
   ]
 })
