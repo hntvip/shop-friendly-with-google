@@ -1,7 +1,15 @@
 <template>
   <div class="menu-wrapper">
     <el-aside style="background-color: rgb(238, 241, 246)" :class="{ active: isCollapse == true }">
-        <el-menu default-active="1" router="router"class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
+        <el-menu 
+          default-active="1" 
+          router="router" 
+          class="el-menu-vertical-demo" 
+          @open="handleOpen" 
+          @close="handleClose" 
+          :collapse="isCollapse"
+          :collapse-transition="false"
+          >
           <el-menu-item @click="collapseMenu">
             <i v-bind:class="[isCollapse ? 'el-icon-d-arrow-right' : 'el-icon-d-arrow-left']"></i>
           </el-menu-item>
@@ -76,14 +84,30 @@
             <span slot="title">Product Page width Id = 1</span>
           </el-menu-item>
         </el-menu>
+
+        <!-- <el-menu
+        :default-active="activeMenu"
+        :collapse="isCollapse"
+        :background-color="variables.menuBg"
+        :text-color="variables.menuText"
+        :unique-opened="false"
+        :active-text-color="variables.menuActiveText"
+        :collapse-transition="false"
+        mode="vertical"
+      >
+        <sidebar-item v-for="route in permission_routes" :key="route.path" :item="route" :base-path="route.path" />
+      </el-menu> -->
       </el-aside>
   </div>
 </template>
 
 <script>
-
+import SideBarItem from './SidebarItem'
 export default {
-  name: 'SidebarItem',
+  name: 'Sidebar',
+  compoents: {
+    
+  },
   props: {
     
   },
@@ -105,6 +129,16 @@ export default {
     collapseMenu () {
       console.log("collapse menu clicked")
       this.isCollapse = !this.isCollapse;
+      var _value = false;
+      
+      if (this.isCollapse){
+        _value = true;
+      }
+
+      this.$store.dispatch('settings/changeSetting', {
+        key: 'sidebarLogo',
+        value: _value
+      })
     }
   }
 }
