@@ -3,9 +3,6 @@
     <router-view/>
   </div>
 </template>
-<style lang="less">
-
-</style>
 
 <script>
   export default {
