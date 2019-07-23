@@ -1,3 +1,6 @@
+/*
+  From admin UI
+*/
 import Cookies from 'js-cookie'
 
 const TokenKey = 'Admin-Token'
